@@ -74,23 +74,26 @@ export default ({ dispatchBreedChange }) => {
             <>
               <div className='field breed-list'>
                 <div className='control'>
-                  {breeds.map(breed => (
-                      <label className='radio' key={breed.id}>
-                        <input type="radio" name="breed" checked={value === breed.id.toString()} value={breed.id} onChange={handleChange} />
-                        {breed.name}
-                      </label>
-                  ))}
+                  {
+                    breeds.map(breed => (
+                        <label className='radio' key={breed.id}>
+                            <input type="radio" name="breed" checked={value === breed.id.toString()} value={breed.id} onChange={handleChange} />
+                            {breed.name}
+                        </label>
+                    ))
+                  }
                 </div>
               </div>
 
               <br />
-              
+
               <nav className="pagination is-rounded" role="navigation" aria-label="pagination">
                 <a className="pagination-previous" onClick={() => handlePageClick(currentPage - 1)} disabled={currentPage <= 0}>
-                  Previous
+                    Previous
                 </a>
+                
                 <a className="pagination-previous" onClick={() => handlePageClick(currentPage + 1)} disabled={currentPage + 1 >= totalPages}>
-                  Next page
+                    Next page
                 </a>
               </nav>
             </>

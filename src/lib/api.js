@@ -40,8 +40,8 @@ const callAPI = async (url, params = null) => {
 //
 export const fetchBreeds = async (page, count = 10) => {
     const breeds = await callAPI('breeds', {
-            limit: count,
-            page,
+        limit: count,
+        page,
     });
 
     return {
